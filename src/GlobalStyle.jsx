@@ -47,5 +47,19 @@ const GlobalStyle=createGlobalStyle`
     ${'' /* padding: .5em; */}
     ${'' /* line-height: 1.22; */}
 }
+.maindiv {
+    display:flex;
+   
+}
+
+.left-nav{
+    display:flex;
+    ${'' /* justify-content:flex-end; */}
+    
+}
+.right-nav{
+   display:flex;
+}
+.
 `
 export default GlobalStyle;

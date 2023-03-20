@@ -52,6 +52,7 @@ const theme={
       shadowSupport: " rgba(0, 0, 0, 0.16) 0px 1px 4px",
     },
     //media queries krdi set
+    media:{mobile:"100px",tab:"998px"},
 
   };
 export default SplitBackground;

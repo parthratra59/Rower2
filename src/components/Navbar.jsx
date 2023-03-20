@@ -1,43 +1,16 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import styled from "styled-components";
+// import styled from "styled-components";
 import { IoIosAddCircleOutline } from "react-icons/io";
+// import {CgMenu,CgCloseO} from "react-icons/cg"
+import GlobalStyle from "../GlobalStyle";
 const Navbar=()=>{ 
-    const Nav =styled.nav`
-    .navbar-list{
-        display:flex;
-        gap:1rem;
-        li{
-        list-style:none;
-        .navbar-link
-        {
-            &:link,
-            &:visited{
-                display: inline-block;
-                
-                text-decoration: none; 
-                ${'' /* line ht gyi */}
-                font-size:1.2rem;
-                ${'' /* text-transform:uppercase; */}
-                
-                color:${({theme})=>theme.colors.black};
-                transition:color 0.3s linear;
-                cursor:pointer;
-                            
-                }
-                &:hover,
-                &:active{
-                    color:${({theme})=>theme.colors.helper};
-                }
-            }
-        }
-    }
-    `;
+    <GlobalStyle/>
     return(
         <>
-            <Nav>
-                <div className="menuIcon">
-                    <ul className="navbar-list">
+        
+            <div className="maindiv">
+                    <ul className="left-nav">
                         <li>
                             <NavLink className="navbar-link" to='/'>Home</NavLink>
                            
@@ -48,8 +21,25 @@ const Navbar=()=>{
                         
                         </li>
                     </ul>
+                  
+
+
+                {/* <div className="signin"> */}
+                <ul className="right-nav">
+                        <li>
+                            <NavLink className="">sign in</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="">login</NavLink>
+                        </li>
+                </ul>
+                    {/* </div> */}
+            {/* </div> */}
+                
                 </div>
-            </Nav>
+
+                
+            {/* </Nav> */}
         </>
     )
 }
