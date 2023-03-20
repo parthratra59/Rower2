@@ -24,7 +24,8 @@ const GlobalStyle=createGlobalStyle`
    background:black;
 
    height:100vh;
-   width:100%;
+   width:70%;
+   
    ${'' /* background-size:cover; */}
    ${'' /* background-position:50% 15%; */}
    
