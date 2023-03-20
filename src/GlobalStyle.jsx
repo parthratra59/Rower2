@@ -1,8 +1,8 @@
 
 // import React from "react";
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle=createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 
 *{
     margin:0px;
@@ -24,7 +24,7 @@ const GlobalStyle=createGlobalStyle`
    background:black;
 
    height:100vh;
-   width:70%;
+   width:100%;
    
    ${'' /* background-size:cover; */}
    ${'' /* background-position:50% 15%; */}
