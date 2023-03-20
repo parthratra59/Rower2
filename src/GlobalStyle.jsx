@@ -17,8 +17,8 @@ const GlobalStyle=createGlobalStyle`
     display:flex;
     height:100vh;
     width:100%
-    
 }
+//Hi this is a comment;
 .child-1{
     ${'' /* position:absolute; */}
    background:black;
