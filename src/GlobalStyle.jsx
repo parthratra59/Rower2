@@ -1,6 +1,7 @@
 
 // import React from "react";
 import { createGlobalStyle } from "styled-components";
+import './font.css';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -112,7 +113,7 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    ${'' /* padding-left:15px; */}
+    
 }
 .design{
     display:flex;
@@ -159,5 +160,23 @@ header{
     height:50%;
 }
 
-`
+
+.s0{
+    font-size:70px;
+}
+.s1{
+    font-size:60px;
+}
+.s2{
+    font-size:50px;
+}
+.s3{
+    font-size:40px;
+}
+.s4{
+    font-size:30px;
+}
+.s5{
+    font-size:25px;
+}`
 export default GlobalStyle;

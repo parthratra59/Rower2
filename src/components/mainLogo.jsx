@@ -7,7 +7,7 @@ const MainLogo = () => {
 
 
     <div className="landing-logo">
-      <a href="">
+      <a href="./App.jsx">
         <img src={finalLogo1} alt="" className="logo" />
         <h1>Rower Taxi</h1>
         <p>Providing instant taxi's</p>
