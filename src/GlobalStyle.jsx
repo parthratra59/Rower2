@@ -19,15 +19,14 @@ const GlobalStyle=createGlobalStyle`
     display:flex;
     height:100vh;
     width:100%
-    
 }
+//Hi this is a comment;
 .child-1{
     ${'' /* position:absolute; */}
    background:black;
   
     
    height:100vh;
-   width:100%;
 
    ${'' /* background-size:cover; */}
    ${'' /* background-position:50% 15%; */}
