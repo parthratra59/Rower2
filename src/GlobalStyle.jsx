@@ -53,7 +53,6 @@ const GlobalStyle=createGlobalStyle`
     ${'' /* line-height: 1.22; */}
 }
 
-
 header{
     width:100%;
 }
