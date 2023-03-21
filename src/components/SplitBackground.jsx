@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import Home from "../Home";
 import PublishRide from "./PublishRide";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import MainLogo from "./mainLogo";
 const SplitBackground=()=>{
     return(
         <>
@@ -13,7 +14,7 @@ const SplitBackground=()=>{
         <GlobalStyle/>
              <div className="parent">
                 <div className="child-1">
-                  
+                  <MainLogo/>
                 </div>
                 
                 <div className="child-2">

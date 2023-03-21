@@ -7,12 +7,9 @@ const MainLogo = () => {
 
 
     <div className="landing-logo">
-      <a href="/">
         <img src={finalLogo1} alt="" className="logo" />
-        {/* <h1>ROWER TAXI</h1>
-        <h2>Providing instant taxi's</h2> */}
-
-      </a>
+        <h1>Rower Taxi</h1>
+        <p>Providing instant taxi</p>
     </div>
   )
 }

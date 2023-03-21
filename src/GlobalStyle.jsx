@@ -126,6 +126,19 @@ header{
     align-items:center;
     justify-content:center;
 }
+.landing-logo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:500px;
+}
+.landing-logo h1{
+    color:#f8dc5d;
+}
+.landing-logo p{
+    color:#f8dc5d;
+}
 
 `
 export default GlobalStyle;
