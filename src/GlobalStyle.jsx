@@ -126,18 +126,37 @@ header{
     align-items:center;
     justify-content:center;
 }
+
+
 .landing-logo{
-    display:flex;
+    position:relative;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    height:500px;
+    margin-top:35%;
+    margin-left:35%;
+     
 }
 .landing-logo h1{
     color:#f8dc5d;
+    font-size:50px;
 }
 .landing-logo p{
+    transform:translateX(-3%);
+    font-size:30px;
     color:#f8dc5d;
+    align-text:center;   
+}
+.landing-logo img{
+    width:20%;
+    height:30%;
+    transition:1s ease-in-out;
+}
+.landing-logo img:hover{
+    transform:translateY(-30%);
+    transform:translateX(30%);
+    width:40%;
+    height:50%;
 }
 
 `
