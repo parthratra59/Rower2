@@ -17,7 +17,7 @@ const Navbar = () => {
                         <NavLink to="/Home" >Home </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink">About</NavLink>
+                        <NavLink to='/customerCard' style={{ textDecoration: 'none' }} className="navlink">About</NavLink>
                     </li>
                     <li>
                         <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink"><GrAddCircle className="add" size={18} />Publish a ride</NavLink>

@@ -6,8 +6,10 @@ import Home from "../Home";
 import PublishRide from "./PublishRide";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import MainLogo from "./mainLogo";
+import CustomerCard from "./customerCard";
 
-import Registration from "./Registration";
+
+
 const SplitBackground=()=>{
     return(
         <>
@@ -24,9 +26,9 @@ const SplitBackground=()=>{
                 <Header/>
                 <Routes>
                     <Route exact path='/Home' element={<Home/>}/>
+                    <Route exact path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />}/>
                     <Route exact path='/PublishRide' element={<PublishRide/>}/>
-                    <Route exact path='/PublishRide' element={<PublishRide/>}/>
-                    <Route exact path='/authentication/signup' element={<signin/>}/>
+
                 </Routes>
                 
                 </BrowserRouter>

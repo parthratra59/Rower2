@@ -244,5 +244,19 @@ label{
     position:relative;
     width:70px;
 }
+
+// Css for customerCard
+.customerCardDiv1{
+      color:"black",
+      border:"5px solid black",
+      height:"300px",
+      width:"500px",
+      borderRadius:"20px",
+      padding:"10px",
+      backgroundColor:"white",
+      marginLeft:"200px"
+}
+
+
 `
 export default GlobalStyle;
