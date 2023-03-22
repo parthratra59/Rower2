@@ -14,12 +14,13 @@ const Navbar = () => {
 
                 <ul className="leftchild">
                     <li>
-                        <NavLink to="/Home">
-                            Home
-                        </NavLink>
+                        <NavLink to="/Home" >Home </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/' style={{ textDecoration: 'none' }} className="navlink"><GrAddCircle className="add" size={18} />Publish a ride</NavLink>
+                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink">About</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink"><GrAddCircle className="add" size={18} />Publish a ride</NavLink>
                     </li>
                 </ul>
 

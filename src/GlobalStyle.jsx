@@ -1,7 +1,6 @@
 
 // import React from "react";
 import { createGlobalStyle } from "styled-components";
-import './font.css';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -113,7 +112,7 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    
+    ${'' /* padding-left:15px; */}
 }
 .design{
     display:flex;
@@ -128,7 +127,7 @@ header{
     justify-content:center;
 }
 
-
+${'' /* logo desingn */}
 .landing-logo{
     position:relative;
     flex-direction:column;
@@ -162,22 +161,88 @@ header{
 }
 
 
-.s0{
-    font-size:70px;
+${'' /* Registration form */}
+.regs_container
+{
+    width:100%;
+    height:90%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+   
 }
-.s1{
-    font-size:60px;
+
+form{
+    width:55%;
+    ${'' /* max-width:400px; */}
+    border:3px solid black;
+    padding:25px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:#f8dc5d;
+    margin:5px;
+   
+    ${'' /* justify-content:center; */}
 }
-.s2{
-    font-size:50px;
+.input-fields{
+    margin-top:25px;
+    margin-bottom:15px;
+   
+   
 }
-.s3{
-    font-size:40px;
+
+
+input{
+    width:360px;
+    
+    padding:10px;
+    border:2px solid black;
+    font-size:15px;
+    border-radius:15px;
+    outline:0;
+    background:transparent;
+    color:black;
 }
-.s4{
-    font-size:30px;
+label{
+    position:absolute;
+    height:30%;
+    padding:10px;
+    color:#f8dc5d;
 }
-.s5{
-    font-size:25px;
-}`
+
+.btn{
+    padding: 10px;
+    background:black;
+    color:#f8dc5d;
+    font-size:15px;
+    border-radius:10px;
+    border:1px solid #f8dc5d;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.input-fieldsi{
+    ${'' /* position:"absolute"; */}
+    display:flex;
+    ${'' /* flex-direction:column; */}
+   
+    ${'' /* justify-content:center; */}
+    
+    ${'' /* margin:15px; */}
+    ${'' /* margin-right:20%; */}
+    padding:10px;
+}
+
+.inputing{
+    border-radius:15px;
+    width:160px;
+    margin:4px;
+}
+.subinput{
+    position:relative;
+    width:70px;
+}
+`
 export default GlobalStyle;

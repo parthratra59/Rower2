@@ -8,8 +8,6 @@ const App=()=>{
     return (
         <>
             {/* <GlobalStyle/> */}
-
-          
             <SplitBackground/>
         </>
     )
