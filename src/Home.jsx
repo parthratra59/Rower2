@@ -1,6 +1,6 @@
 import React from "react";
 import "./font.css"
-import styled from "styled-components";
+
 import GlobalStyle from "./GlobalStyle.jsx";
 const Home = () => {
 
@@ -10,9 +10,9 @@ const Home = () => {
         color: "black",
         padding: "5%",
         margin: "5%",
-        lineHeight: "250%",
+        lineHeight: "150%",
         border: "5px solid black",
-        borderRadius: "20%",
+        borderRadius: "15%",
         fontSize: "35px"
     };
     return (
