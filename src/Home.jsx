@@ -10,7 +10,7 @@ const Home = () => {
         color: "black",
         padding: "5%",
         margin: "5%",
-        lineHeight: "150%",
+        lineHeight: "100%",
         border: "5px solid black",
         borderRadius: "15%",
         fontSize: "35px"

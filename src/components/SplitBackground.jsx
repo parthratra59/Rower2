@@ -7,13 +7,16 @@ import PublishRide from "./PublishRide";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import MainLogo from "./mainLogo";
 import CustomerCard from "./customerCard";
-
-
-
+import PhoneSignUp from "./authotication/components/PhoneSignUp";
+import Signup from "./authotication/components/Signup";
+import Home2 from "./authotication/components/Home2";
+import ProtectedRoute from "./authotication/components/ProtectedRoute";
+import { UserAuthContextProvider } from "./authotication/context/UserAuthContext";
+import Login from "./authotication/components/Login";
 const SplitBackground=()=>{
     return(
         <>
-        
+        <UserAuthContextProvider>
             <ThemeProvider theme={theme}>
         <GlobalStyle/>
              <div className="parent">
@@ -28,7 +31,17 @@ const SplitBackground=()=>{
                     <Route exact path='/Home' element={<Home/>}/>
                     <Route exact path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />}/>
                     <Route exact path='/PublishRide' element={<PublishRide/>}/>
-
+                    <Route path="/phonesignup" exact element={<PhoneSignUp/>} />
+                    <Route path="/Login" exact element={<Login/>}/>
+              <Route path="/signup"  exact element={<Signup />} />
+              <Route
+                path="/home"
+                element={
+                  <ProtectedRoute>
+                    <Home2/>
+                  </ProtectedRoute>
+                }
+                />
                 </Routes>
                 
                 </BrowserRouter>
@@ -36,6 +49,7 @@ const SplitBackground=()=>{
                 </div>
             </div>
             </ThemeProvider>
+            </UserAuthContextProvider>
         </>
     )
 }
