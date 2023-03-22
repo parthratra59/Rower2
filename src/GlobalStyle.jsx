@@ -138,6 +138,7 @@ header{
     margin-left:35%;
      
 }
+
 .landing-logo h1{
     color:#f8dc5d;
     font-size:50px;
