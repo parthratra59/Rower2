@@ -21,39 +21,47 @@ const Signup = () => {
       setError(err.message);
     }
   };
-
+  const formStyle = {
+    border: "none",
+    position: "relative",
+    justifyContent: "center",
+    marginLeft: "20%",
+    backgroundColor: "black",
+  }
   return (
     <>
-    <UserAuthContextProvider/>
-      <div className="p-4 box">
-        <h2 className="mb-3">Firebase Auth Signup</h2>
+      <UserAuthContextProvider />
+      <div className="loginDiv">
+        <h1 className="" style={{ color: "#f8dc5d", fontSize: "25px", marginBottom: "4%", marginLeft:"23%" }}>Firebase Auth Signup</h1>
         {error && <Alert variant="danger">{error}</Alert>}
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form onSubmit={handleSubmit} style={formStyle}>
+          <Form.Group className="formGroup" controlId="formBasicEmail">
             <Form.Control
               type="email"
               placeholder="Email address"
+              style={{ color: "#f8dc5d" }}
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="formGroup" controlId="formBasicPassword">
             <Form.Control
+              style={{ color: "#f8dc5d" }}
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
 
-          <div className="d-grid gap-2">
+          <div className="">
             <Button variant="primary" type="Submit">
               Sign up
             </Button>
           </div>
         </Form>
       </div>
-      <div className="p-4 box mt-3 text-center">
-        Already have an account? <Link to="/">Log In</Link>
+      <div className="">
+        Already have an account? <Link to="/Login">Log In</Link>
       </div>
     </>
   );

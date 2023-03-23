@@ -112,7 +112,11 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
+    transition:1s ease-in-out;
     ${'' /* padding-left:15px; */}
+}
+.signbtn{
+
 }
 .design{
     display:flex;
@@ -125,6 +129,7 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
+
 }
 
 ${'' /* logo desingn */}
@@ -160,6 +165,20 @@ ${'' /* logo desingn */}
     height:50%;
 }
 
+// Home Page Paragraph
+
+.homeParagraph span{
+    font-size:40px;
+    color:#f8dc5d;
+    transition:0.08s ease-in-out;
+}
+
+.homeParagraph span:hover{
+    font-size:70px;
+}
+.s0{
+    font-size:200px;
+}
 
 ${'' /* Registration form */}
 .regs_container
@@ -168,37 +187,39 @@ ${'' /* Registration form */}
     height:90%;
     display:flex;
     align-items:center;
-    justify-content:center;
-   
+    justify-content:center;   
+}
+
+.forming{
+    
 }
 
 form{
     width:55%;
     ${'' /* max-width:400px; */}
-    border:3px solid black;
+    border:2px solid black;
     padding:25px;
-    border-radius:15px;
+    border-radius:25px;
     display:flex;
     flex-direction:column;
     align-items:center;
-    background:#f8dc5d;
+    background-color:black;
     margin:5px;
-   
-    ${'' /* justify-content:center; */}
+   ${'' /* justify-content:center; */}
 }
 .input-fields{
     margin-top:25px;
     margin-bottom:15px;
-   
-   
+    border:2px solid #f8dc5d;
+   border-radius:15px;
 }
 
 
 input{
     width:360px;
-    
     padding:10px;
-    border:2px solid black;
+    color:#f8dc5d;
+    border:2px solid #f8dc5d;
     font-size:15px;
     border-radius:15px;
     outline:0;
@@ -210,6 +231,7 @@ label{
     height:30%;
     padding:10px;
     color:#f8dc5d;
+    border
 }
 
 .btn{
@@ -257,6 +279,26 @@ label{
       marginLeft:"200px"
 }
 
+.loginDiv{
+    border:2px solid black;
+    margin:100px;
+    margin-left:20%;
+    padding:20px;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+    border-radius:30px;
+    width:60%;
+    background-color:black;
+}
+.formGroup{
+    margin:10px;
+    margin-left:10%;
+    background-color:black;
+    border:1px solid #f8dc5d;
+    border-radius:15px;
+    
+}
 
 `
 export default GlobalStyle;

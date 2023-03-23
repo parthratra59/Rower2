@@ -4,9 +4,13 @@ import { NavLink } from "react-router-dom";
 import GlobalStyle from "../GlobalStyle";
 import { BsPersonCircle } from "react-icons/bs"
 import { GrAddCircle } from "react-icons/gr"
+import Login from "./authotication/components/Login";
 
 const Navbar = () => {
     <GlobalStyle />
+
+
+
     return (
         <>
 
@@ -14,13 +18,13 @@ const Navbar = () => {
 
                 <ul className="leftchild">
                     <li>
-                        <NavLink to="/Home" >Home </NavLink>
+                        <NavLink to="/Home" style={{ textDecoration: "none" }}>Home </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                         <NavLink to='/customerCard' style={{ textDecoration: 'none' }} className="navlink">About</NavLink>
-                    </li>
+                    </li> */}
                     <li>
-                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink"><GrAddCircle className="add" size={18} />Publish a ride</NavLink>
+                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink"><GrAddCircle className="add" size={18} />Book a ride</NavLink>
                     </li>
                 </ul>
 
@@ -28,7 +32,7 @@ const Navbar = () => {
                 <ul className="rightchild">
                     <div className="sub-child">
                         <li>
-                            <NavLink className='signbtn' to='/' style={{ textDecoration: 'none' }}><BsPersonCircle className="design" size={25} color='black' />Sign in</NavLink>
+                            <NavLink className='signbtn' to='/Login' style={{ textDecoration: 'none' }}><BsPersonCircle className="design" size={25} color='black' />Sign in</NavLink>
                         </li>
                     </div>
                     {/* <li>
