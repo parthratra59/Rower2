@@ -28,16 +28,16 @@ const SplitBackground = () => {
               <BrowserRouter>
                 <Header />
                 <Routes>
-                  <Route exact path='/Home' element={<Home />} />
-                  <Route exact path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />} />
-                  <Route exact path='/PublishRide' element={<PublishRide />} />
+                  <Route exact path='/' element={<Home />} />
+                  <Route  path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />} />
+                  <Route  path='/PublishRide' element={<PublishRide />} />
                   <Route path="/phonesignup" exact element={<PhoneSignUp />} />
                   <Route path="/Login" exact element={<Login />} />
                   <Route path="/signup" exact element={<Signup />} />
                   <Route path="/home"
                     element={
                       <ProtectedRoute>
-                        <Home2 />
+                        <Home2/>
                       </ProtectedRoute>
                     }
                   />
