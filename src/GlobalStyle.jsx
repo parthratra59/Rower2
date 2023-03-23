@@ -97,11 +97,13 @@ header{
     ${'' /* margin:100px; */}
     padding-left:8px;
    border:2px solid black;
+   transition:1s ease-in-out;
    
     ${'' /* background:black; */}
     border-radius:20px;
     
 }
+
 .add{
     ${'' /* display:flex; */}
     margin-right:4px;
@@ -112,12 +114,11 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:1s ease-in-out;
+    
     ${'' /* padding-left:15px; */}
 }
-.signbtn{
 
-}
+
 .design{
     display:flex;
     justify-content:center;

@@ -32,7 +32,7 @@ const Signup = () => {
     <>
       <UserAuthContextProvider />
       <div className="loginDiv">
-        <h1 className="" style={{ color: "#f8dc5d", fontSize: "25px", marginBottom: "4%", marginLeft:"23%" }}>Firebase Auth Signup</h1>
+        <h1 className="" style={{ color: "#f8dc5d", fontSize: "25px", marginBottom: "4%", marginLeft: "23%" }}>Firebase Auth Signup</h1>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit} style={formStyle}>
           <Form.Group className="formGroup" controlId="formBasicEmail">
@@ -58,11 +58,15 @@ const Signup = () => {
               Sign up
             </Button>
           </div>
+          <br />
+          <div className="" style={{ marginLeft: "20%", color: "#f8dc5d", marginTop: "10%" }}>
+            <p style={{ color: "#f8dc5d", marginTop: "10%" }}>
+              Already have an account? <Link to="/Login" style={{ color: "#f8dc5d", }}>Log In</Link>
+            </p>
+          </div>
         </Form>
       </div>
-      <div className="">
-        Already have an account? <Link to="/Login">Log In</Link>
-      </div>
+
     </>
   );
 };
