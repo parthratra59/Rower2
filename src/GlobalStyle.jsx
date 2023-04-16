@@ -189,11 +189,10 @@ ${'' /* Registration form */}
     display:flex;
     align-items:center;
     justify-content:center;   
+    ${'' /* z-index:'modal'; */}
 }
 
-.forming{
-    
-}
+
 
 form{
     width:55%;
@@ -206,6 +205,8 @@ form{
     align-items:center;
     background-color:black;
     margin:5px;
+
+  
    ${'' /* justify-content:center; */}
 }
 .input-fields{

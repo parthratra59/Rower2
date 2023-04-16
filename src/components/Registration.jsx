@@ -1,9 +1,19 @@
 import React from "react";
 // import { icons } from "react-icons";
 import GlobalStyle from "../GlobalStyle";
+
+
 const Registration = () => {
+
+
+
     <GlobalStyle/>
     // const styling = { color: '#f8dc5d', fontSize: "25px" }
+
+   
+
+  
+
     const styleCal = {
         color: "#f8dc5d"
 
@@ -14,6 +24,7 @@ const Registration = () => {
 
     return (
         <>
+            
             <div className="regs_container">
                 <form action="" className="forming">
                     <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter trip details:</h1>

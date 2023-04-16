@@ -5,11 +5,12 @@ import GlobalStyle from "../GlobalStyle";
 import { BsPersonCircle } from "react-icons/bs"
 import { GrAddCircle } from "react-icons/gr"
 import Login from "./authotication/components/Login";
-
-const Navbar = () => {
+import { useState } from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
+const Navbar = (props) => {
     <GlobalStyle />
 
-
+    
 
     return (
         <>
@@ -18,13 +19,14 @@ const Navbar = () => {
 
                 <ul className="leftchild">
                     <li>
-                        <NavLink to="/Home" style={{ textDecoration: "none" }}>Home </NavLink>
+                        <NavLink to="/Home" style={{ textDecoration: "none" }} onClick={props.hc2}>Home </NavLink>
                     </li>
                     {/* <li>
                         <NavLink to='/customerCard' style={{ textDecoration: 'none' }} className="navlink">About</NavLink>
                     </li> */}
                     <li>
-                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink"><GrAddCircle className="add" size={18} />Book a ride</NavLink>
+                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}><GrAddCircle className="add" size={18} onClick={props.hc} 
+                        />Book a ride</NavLink>
                     </li>
                 </ul>
 

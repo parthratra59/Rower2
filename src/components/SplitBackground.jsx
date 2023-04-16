@@ -13,7 +13,27 @@ import Home2 from "./authotication/components/Home2";
 import ProtectedRoute from "./authotication/components/ProtectedRoute";
 import { UserAuthContextProvider } from "./authotication/context/UserAuthContext";
 import Login from "./authotication/components/Login";
+import { useState } from "react";
+import Navbar from "./Navbar";
+// import Registration from "./Registration";
+import Map from "./Map";
+
+
+
 const SplitBackground = () => {
+
+const [Mapping,setMap]=useState(false);
+// const se hm c
+  function handleclick(){
+    setMap(true);  
+    console.log(Mapping);
+  }
+  function handleclick2(){
+    setMap(false);  
+    console.log(Mapping);
+  }
+  
+  
   return (
     <>
       <UserAuthContextProvider>
@@ -21,12 +41,16 @@ const SplitBackground = () => {
           <GlobalStyle />
           <div className="parent">
             <div className="child-1">
-              <MainLogo />
+            {/* <Registration/> */}
+              {Mapping?<Map/>:<MainLogo/>}
+              {/* <MainLogo /> */}
+            
+              
             </div>
 
             <div className="child-2">
               <BrowserRouter>
-                <Header />
+                <Navbar hc={handleclick} hc2={handleclick2}/>
                 <Routes>
                   <Route exact path='/' element={<Home />} />
                   <Route  path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />} />
