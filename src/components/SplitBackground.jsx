@@ -17,23 +17,24 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 // import Registration from "./Registration";
 import Map from "./Map";
+import BookRide from "./BookRide";
 
 
 
 const SplitBackground = () => {
 
-const [Mapping,setMap]=useState(false);
-// const se hm c
-  function handleclick(){
-    setMap(true);  
+  const [Mapping, setMap] = useState(false);
+  // const se hm c
+  function handleclick() {
+    setMap(true);
     console.log(Mapping);
   }
-  function handleclick2(){
-    setMap(false);  
+  function handleclick2() {
+    setMap(false);
     console.log(Mapping);
   }
-  
-  
+
+
   return (
     <>
       <UserAuthContextProvider>
@@ -41,27 +42,28 @@ const [Mapping,setMap]=useState(false);
           <GlobalStyle />
           <div className="parent">
             <div className="child-1">
-            {/* <Registration/> */}
-              {Mapping?<Map/>:<MainLogo/>}
+              {/* <Registration/> */}
+              {Mapping ? <Map /> : <MainLogo />}
               {/* <MainLogo /> */}
-            
-              
+
+
             </div>
 
             <div className="child-2">
               <BrowserRouter>
-                <Navbar hc={handleclick} hc2={handleclick2}/>
+                <Navbar hc={handleclick} hc2={handleclick2} />
                 <Routes>
                   <Route exact path='/' element={<Home />} />
-                  <Route  path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />} />
-                  <Route  path='/PublishRide' element={<PublishRide />} />
+                  <Route path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />} />
+                  <Route path='/PublishRide' element={<PublishRide />} />
                   <Route path="/phonesignup" exact element={<PhoneSignUp />} />
                   <Route path="/Login" exact element={<Login />} />
                   <Route path="/signup" exact element={<Signup />} />
+                  <Route path="/BookRide" exact element={<BookRide />} />
                   <Route path="/home"
                     element={
                       <ProtectedRoute>
-                        <Home2/>
+                        <Home2 />
                       </ProtectedRoute>
                     }
                   />

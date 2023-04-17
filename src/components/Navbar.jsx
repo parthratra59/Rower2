@@ -10,7 +10,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 const Navbar = (props) => {
     <GlobalStyle />
 
-    
+
 
     return (
         <>
@@ -25,8 +25,12 @@ const Navbar = (props) => {
                         <NavLink to='/customerCard' style={{ textDecoration: 'none' }} className="navlink">About</NavLink>
                     </li> */}
                     <li>
-                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}><GrAddCircle className="add" size={18} onClick={props.hc} 
+                        <NavLink to='/PublishRide' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}><GrAddCircle className="add" size={18} onClick={props.hc}
                         />Book a ride</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/BookRide' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}><GrAddCircle className="add" size={18} onClick={props.hc}
+                        />Publish Ride</NavLink>
                     </li>
                 </ul>
 
