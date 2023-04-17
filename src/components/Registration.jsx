@@ -23,6 +23,10 @@ const Registration = () => {
             date: date,
             seats: availableSeats,
         })
+        setorigin('');
+        setdestination('');
+        setdate('');
+        setAvailableSeats('');
     }
 
 
