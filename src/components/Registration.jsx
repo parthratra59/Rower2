@@ -50,7 +50,10 @@ const Registration = () => {
         if (origin === '' || destination === '' || date === '' || seats === '') {
             alert("Enter all the fields");
         }
-
+        origin.value = '';
+        destination.value = '';
+        date.value = '';
+        seats.value = '';
     }
 
 
