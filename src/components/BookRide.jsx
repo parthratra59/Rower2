@@ -34,9 +34,16 @@ const BookRide = () => {
             cost: cost,
             seats: seats,
         })
+        setorigin('');
+        setdestination('');
+        setdate('');
+        settime('');
+        setcost('');
+        setseats('');
+
     }
 
-
+    var remove = false;
     function click() {
         var origin = document.getElementById('origin').value;
         var destination = document.getElementById('destination').value;
@@ -49,6 +56,10 @@ const BookRide = () => {
         }
 
     }
+
+
+
+
 
 
 
