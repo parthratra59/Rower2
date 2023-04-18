@@ -24,6 +24,7 @@ const BookRide = () => {
         e.preventDefault(e)
         if (cost === '') {
             alert("Please Enter some Value");
+            
             return;
         }
         await addDoc(collection(db, 'publishedRides'), {
@@ -45,15 +46,13 @@ const BookRide = () => {
 
     var remove = false;
     function click() {
-        var origin = document.getElementById('origin').value;
-        var destination = document.getElementById('destination').value;
-        var date = document.getElementById('date').value;
-        var time = document.getElementById('time').value;
-        var seats = document.getElementById('seats').value;
-        var cost = document.getElementById('cost').value;
-        if (origin === '' || destination === '' || date === '' || time === '' || seats === '' || cost === '') {
-            alert("Enter all the fields");
-        }
+        var origin = document.getElementById('origin').value='';
+        var destination = document.getElementById('destination').value='';
+        var date = document.getElementById('date').value='';
+        var time = document.getElementById('time').value='';
+        var seats = document.getElementById('seats').value='';
+        var cost = document.getElementById('cost').value='';
+       
 
     }
 

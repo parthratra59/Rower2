@@ -6,15 +6,15 @@ import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from
 
 const Registration = () => {
 
-
-
     <GlobalStyle />
-    // const styling = { color: '#f8dc5d', fontSize: "25px" }
+    const styleCal = {
+        color: "#f8dc5d"
+    }
 
     const createBooking = async (e) => {
-        e.preventDefault(e)
-        if (date === '') {
-            alert("Please Enter some Value");
+        e.preventDefault();
+        if (date === '' || origin === '' || destination === '' || availableSeats === '') {
+            alert("Please Enter all the values");
             return;
         }
         await addDoc(collection(db, 'bookings'), {
@@ -29,58 +29,37 @@ const Registration = () => {
         setAvailableSeats('');
     }
 
-
-
-    const styleCal = {
-        color: "#f8dc5d"
-
-    }
-
     const [origin, setorigin] = useState('');
     const [destination, setdestination] = useState('');
     const [date, setdate] = useState('');
     const [availableSeats, setAvailableSeats] = useState('');
 
-
-    function click() {
-        var origin = document.getElementById('origin').value;
-        var destination = document.getElementById('destination').value;
-        var date = document.getElementById('date').value;
-        var seats = document.getElementById('seats').value;
-        if (origin === '' || destination === '' || date === '' || seats === '') {
-            alert("Enter all the fields");
-        }
-        origin.value = '';
-        destination.value = '';
-        date.value = '';
-        seats.value = '';
+    function clearInputs() {
+        document.getElementById('origin').value = '';
+        document.getElementById('destination').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('seats').value = '';
     }
-
-
 
     return (
         <>
-
             <div className="regs_container">
-                <form action="" className="forming" onSubmit={click}>
+                <form action="" className="forming" onSubmit={createBooking}>
                     <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter trip details:</h1>
                     <div className="input-fields" >
-
-                        <input type='text' placeholder="Leaving from..." style={styleCal} id="origin" onChange={(e) => { setorigin(e.target.value) }} />
+                        <input type='text' placeholder="Leaving from..." style={styleCal} id="origin" value={origin} onChange={(e) => { setorigin(e.target.value) }} />
                     </div>
                     <div className="input-fields">
                         <label htmlfor="username"></label>
-                        <input type='text' placeholder="Going to..." style={styleCal} id="destination" onChange={(e) => { setdestination(e.target.value) }} />
+                        <input type='text' placeholder="Going to..." style={styleCal} id="destination" value={destination} onChange={(e) => { setdestination(e.target.value) }} />
                     </div>
                     <div className="input-fieldsi">
-                        {/* <label htmlfor="" className="subinput"></label> */}
-                        <input type='date' className="inputing" style={styleCal} id="date" onChange={(e) => { setdate(e.target.value) }} />
+                        <input type='date' className="inputing" style={styleCal} id="date" value={date} onChange={(e) => { setdate(e.target.value) }} />
                         <label htmlfor="username"></label>
-                        <input type='number' className="inputing" placeholder="Passenger..." style={{ color: "#f8dc5d" }} id="seats" onChange={(e) => { setAvailableSeats(e.target.value) }} />
-
+                        <input type='number' className="inputing" placeholder="Passenger..." style={{ color: "#f8dc5d" }} id="seats" value={availableSeats} onChange={(e) => { setAvailableSeats(e.target.value) }} />
                     </div>
 
-                    <button type="submit" className="btn" onClick={createBooking}>
+                    <button type="submit" className="btn" onClick={clearInputs} >
                         Search
                     </button>
 
