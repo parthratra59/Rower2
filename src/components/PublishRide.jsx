@@ -4,6 +4,7 @@ import Registration from './Registration'
 const PublishRide = () => {
   return (
     <>
+        
         <Registration/>
     </>
   )

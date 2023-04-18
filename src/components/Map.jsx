@@ -6,14 +6,15 @@ import { useJsApiLoader, GoogleMap, Marker, Autocomplete } from "@react-google-m
 const center = { lat: 26.84, lng: 75.56 }
 const Map = () => {
     const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
         // once it will we loaded then we want places to load again
         libraries: ['places']
     })
 
-    const [map, setMap] = useState(null)
+    const [map, setMap] = useState(/**@type google.maps.Map */(null))
 
 
+    
 
 
     return (
@@ -39,10 +40,13 @@ const Map = () => {
                 <Marker position={center} />
 
             </GoogleMap>
+            
+
 
 
         </>
     )
 
 }
-export default Map;
+
+export default Map

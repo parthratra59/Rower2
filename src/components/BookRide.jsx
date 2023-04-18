@@ -2,6 +2,7 @@ import GlobalStyle from "../GlobalStyle";
 import React, { useState, useEffect } from 'react';
 import { db } from './authotication/firebase.js';
 import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
+import { Autocomplete,useJsApiLoader,GoogleMap,Marker } from "@react-google-maps/api";
 
 const BookRide = () => {
     <GlobalStyle />
@@ -56,7 +57,14 @@ const BookRide = () => {
 
     }
 
+    const { isLoaded } = useJsApiLoader({
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+        // once it will we loaded then we want places to load again
+        libraries: ['places']
+    })
+    const center = { lat: 26.84, lng: 75.56 }
 
+    const [map, setMap] = useState(/**@type google.maps.Map */(null))
 
 
 
@@ -64,14 +72,40 @@ const BookRide = () => {
 
     return (
 
+<>
+<GoogleMap center={center}
+                zoom={15}
+                mapContainerStyle={{
+                    width: '0%', height: '0%'
+
+                }}
+                options={{
+                    zoomControl: false,
+                    streetViewControl: false,
+                    mapTypeControl: true,
+                    fullscreenControl: false,
+
+                }}
+                onLoad={map => setMap(map)}
+            >
+
+
+
+                <Marker position={center} />
+                {/* <Autocomplete/> */}
+            </GoogleMap>
         <div className="regs_container">
             <form action="" className="forming" onSubmit={createRide}>
                 <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter Trip details:</h1>
                 <div className="input-fields">
+                    <Autocomplete>
                     <input type='text' placeholder="Leaving From..." style={styleCal} id='origin' onChange={(e) => setorigin(e.target.value)} />
+                    </Autocomplete>
                 </div>
                 <div className="input-fields">
+                <Autocomplete>
                     <input type='text' placeholder="Going to..." style={styleCal} id="destination" onChange={(e) => setdestination(e.target.value)} />
+                    </Autocomplete>
                 </div>
                 <div className="input-fieldsi">
                     {/* <label htmlfor="" className="subinput"></label> */}
@@ -90,7 +124,7 @@ const BookRide = () => {
 
             </form>
         </div>
-
+        </>
     )
 }
 
