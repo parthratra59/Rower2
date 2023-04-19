@@ -25,7 +25,7 @@ const Login = () => {
       setError(err.message);
     }
   };
-  
+
 
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
@@ -36,6 +36,10 @@ const Login = () => {
       console.log(error.message);
     }
   };
+
+  const myStyle = {
+    color: "red",
+  }
   const formStyle = {
     border: "none",
     position: "relative",
@@ -49,7 +53,7 @@ const Login = () => {
       <div className="loginDiv">
         <Form onSubmit={handleSubmit} style={formStyle}>
           <h1 className="" style={{ color: "#f8dc5d", fontSize: "25px", marginBottom: "4%" }}>Firebase Auth Login</h1>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <Alert variant="danger" style={myStyle}>{error}</Alert>}
 
           <Form.Group className="formGroup" controlId="formBasicEmail">
             <Form.Control

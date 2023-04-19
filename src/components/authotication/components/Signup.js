@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
@@ -14,6 +14,21 @@ const Signup = () => {
   const { signUp } = useUserAuth();
   let navigate = useNavigate();
 
+  const [checkRegister,setCheckRegister]=useState([]);
+  useEffect(() => {
+    const q = query(collection(db, 'userDetails'));
+    const unsubcribe = onSnapshot(q, (querySnapshot) => {
+        let ridesArr = []
+        querySnapshot.forEach((doc) => {
+            ridesArr.push({ ...doc.data(), id: doc.id })
+        });
+        setCheckRegister(ridesArr)
+    })
+    return () => unsubcribe()
+}, [])
+
+
+
   const userSignup = async (e) => {
     e.preventDefault(e)
     if (email === '' || password === '') {
@@ -21,6 +36,7 @@ const Signup = () => {
 
       return;
     }
+
     await addDoc(collection(db, 'userDetails'), {
       email: email,
       password: password,
