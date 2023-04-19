@@ -113,7 +113,7 @@ const Registration = () => {
                     <Text style={{color:'white'}}>distance</Text>
                     <Text style={{color:'white'}}>duration</Text>
                     <IconButton icon ={<FaLocationArrow/>} style={{color:'red',height:50}} >heelo</IconButton>
-                    <button type="submit" className="btn" >
+                    <button type="submit" className="btn"  onClick={clearInputs}>
                         Search
                     </button>
 
