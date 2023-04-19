@@ -41,7 +41,7 @@ const Map = () => {
             setDirectionsResponse(results)
             // bhaut sare direction honge but hum sirf first vale target kr rhe
             setDistance(results.routes[0].legs[0].distance.text);
-            setDuration(results.routes[0].legs[0].distance.text);
+            setDuration(results.routes[0].legs[0].duration.text);
 
         }
 

@@ -4,6 +4,8 @@ import { db } from './authotication/firebase.js';
 import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
 import { useJsApiLoader, GoogleMap, Marker, Autocomplete } from "@react-google-maps/api";
 // import { Autocomplete } from "@react-google-maps/api";
+import { IconButton ,Button,Text} from "@chakra-ui/react";
+import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 
 const Registration = () => {
 
@@ -107,10 +109,14 @@ const Registration = () => {
                             }
                             }} />
                     </div>
-
-                    <button type="submit" className="btn" onClick={clearInputs} >
+                    <Button >calculateRoute</Button>
+                    <Text style={{color:'white'}}>distance</Text>
+                    <Text style={{color:'white'}}>duration</Text>
+                    <IconButton icon ={<FaLocationArrow/>} style={{color:'red',height:50}} >heelo</IconButton>
+                    <button type="submit" className="btn" >
                         Search
                     </button>
+
 
                 </form>
             </div >
@@ -122,5 +128,5 @@ const Registration = () => {
         </>
     )
 }
-export default Registration;
+export default Registration ;
 
