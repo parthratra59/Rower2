@@ -18,6 +18,7 @@ import Navbar from "./Navbar";
 // import Registration from "./Registration";
 import Map from "./Map";
 import BookRide from "./BookRide";
+import Published from "./published";
 
 
 
@@ -54,12 +55,14 @@ const SplitBackground = () => {
                 <Navbar hc={handleclick} hc2={handleclick2} />
                 <Routes>
                   <Route exact path='/' element={<Home />} />
-                  <Route path='/customerCard' element={<CustomerCard Start="Jaipur" destination="Fridabad" start-time="4:00pm" />} />
                   <Route path='/PublishRide' element={<PublishRide />} />
                   <Route path="/phonesignup" exact element={<PhoneSignUp />} />
                   <Route path="/Login" exact element={<Login />} />
                   <Route path="/signup" exact element={<Signup />} />
                   <Route path="/BookRide" exact element={<BookRide />} />
+                  <Route path="/published" exact element={<Published />} />
+
+
                   <Route path="/home"
                     element={
                       <ProtectedRoute>

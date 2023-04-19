@@ -32,6 +32,10 @@ const Navbar = (props) => {
                         <NavLink to='/BookRide' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}><GrAddCircle className="add" size={18} onClick={props.hc}
                         />Publish Ride</NavLink>
                     </li>
+                    <li>
+                        <NavLink to='/published' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}>
+                            MyRides</NavLink>
+                    </li>
                 </ul>
 
 
