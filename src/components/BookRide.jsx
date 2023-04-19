@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { db } from './authotication/firebase.js';
 import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
 import { Autocomplete,useJsApiLoader,GoogleMap,Marker } from "@react-google-maps/api";
+import { IconButton ,Button,Text} from "@chakra-ui/react";
+import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 
 const BookRide = () => {
     <GlobalStyle />
@@ -118,6 +120,14 @@ const BookRide = () => {
                     <input type='number' className="inputing" placeholder="Seats Available" style={{ color: "#f8dc5d" }} id="seats" onChange={(e) => setseats(e.target.value)} />
                     <input type='number' className="inputing" placeholder="Cost Per Person" style={{ color: "#f8dc5d" }} id="cost" onChange={(e) => setcost(e.target.value)} />
                 </div>
+
+             
+                <Button >calculateRoute</Button>
+                <Text style={{color:'white'}}>distance</Text>
+                
+                    <Text style={{color:'white'}}>duration</Text>
+                    <IconButton icon ={<FaLocationArrow/>} style={{color:'red',height:50}}>heelo</IconButton>
+
                 <button type="submit" className="btn" onClick={click} >
                     Publish My Ride
                 </button>

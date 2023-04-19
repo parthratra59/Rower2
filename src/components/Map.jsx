@@ -37,11 +37,11 @@ const Map = () => {
             destination: destiantionRef.current.value,
             travelMode: google.maps.TravelMode.DRIVING
 
-        });
-        setDirectionsResponse(results)
-        // bhaut sare direction honge but hum sirf first vale target kr rhe
-        setDistance(results.routes[0].legs[0].distance.text);
-        setDuration(results.routes[0].legs[0].duration.text);
+            });
+            setDirectionsResponse(results)
+            // bhaut sare direction honge but hum sirf first vale target kr rhe
+            setDistance(results.routes[0].legs[0].distance.text);
+            setDuration(results.routes[0].legs[0].distance.text);
 
     }
 

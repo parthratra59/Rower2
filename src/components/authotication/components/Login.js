@@ -6,6 +6,7 @@ import GoogleButton from "react-google-button";
 import { useUserAuth } from "../context/UserAuthContext";
 import GlobalStyle from "../../../GlobalStyle";
 
+
 const Login = () => {
   <GlobalStyle />
   const [email, setEmail] = useState("");
@@ -24,6 +25,7 @@ const Login = () => {
       setError(err.message);
     }
   };
+  
 
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();

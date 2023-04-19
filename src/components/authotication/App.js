@@ -5,19 +5,16 @@ import Home from "../authotication/components/Home"
 import Login from "../authotication/components/Login"
 import PhoneSignUp from "../authotication/components/PhoneSignUp"
 import ProtectedRoute from "../authotication/components/ProtectedRoute"
-
-
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import Signup from "../authotication/components/Signup"
 import React from "react";
 import GlobalStyle from "../GlobalStyle";
 import Header from "./Header";
 import { ThemeProvider } from "styled-components";
-import Home from "../Home";
 import PublishRide from "./PublishRide";
-import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLogo from "./mainLogo";
-import CustomerCard from "./customerCard";
+import Home from "../Home";
 
 
 function App() {
@@ -26,7 +23,7 @@ function App() {
       <Row>
         <Col>
           <UserAuthContextProvider>
-          <Routes>
+            <Routes>
               <Route
                 path="/home"
                 element={
@@ -36,9 +33,9 @@ function App() {
                 }
               />
               <Route path="/" exact element={<Login />} />
-              <Route path="/phonesignup" exact element={<PhoneSignUp/>} />
-              <Route path="/signup"  exact element={<Signup />} />
-              
+              <Route path="/phonesignup" exact element={<PhoneSignUp />} />
+              <Route path="/signup" exact element={<Signup />} />
+
             </Routes>
           </UserAuthContextProvider>
         </Col>

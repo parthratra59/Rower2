@@ -4,19 +4,38 @@ import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
 import { UserAuthContextProvider } from "../context/UserAuthContext";
+import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const { signUp } = useUserAuth();
   let navigate = useNavigate();
+
+  const userSignup = async (e) => {
+    e.preventDefault(e)
+    if (email === '' || password === '') {
+      alert("Please Enter some Value");
+
+      return;
+    }
+    await addDoc(collection(db, 'userDetails'), {
+      email: email,
+      password: password,
+      phone: phone,
+    })
+    alert("You are registered. Proceed To login.");
+
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await signUp(email, password);
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       setError(err.message);
     }
@@ -43,7 +62,14 @@ const Signup = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
-
+          <Form.Group className="formGroup" controlId="formBasicEmail">
+            <Form.Control
+              type="number"
+              placeholder="Phone"
+              style={{ color: "#f8dc5d" }}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </Form.Group>
           <Form.Group className="formGroup" controlId="formBasicPassword">
             <Form.Control
               style={{ color: "#f8dc5d" }}
@@ -54,7 +80,7 @@ const Signup = () => {
           </Form.Group>
 
           <div className="">
-            <Button variant="primary" type="Submit">
+            <Button variant="primary" type="Submit" onClick={userSignup}>
               Sign up
             </Button>
           </div>
