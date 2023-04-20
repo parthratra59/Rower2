@@ -18,6 +18,7 @@ import Navbar from "./Navbar";
 import Map from "./Map";
 import BookRide from "./BookRide";
 import Published from "./published";
+import Verification from "./Verification"
 
 
 
@@ -74,6 +75,7 @@ const SplitBackground = () => {
                   <Route path="/signup" exact element={<Signup />} />
                   <Route path="/BookRide" exact element={<BookRide dataTransfer={dataTransfer} />} />
                   <Route path="/published" exact element={<Published />} />
+                  <Route path="/Verification" exact element={<Verification/>}/>
 
 
                   <Route path="/home"

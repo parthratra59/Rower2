@@ -8,6 +8,7 @@ import { useUserAuth } from "../context/UserAuthContext";
 import { async } from "@firebase/util";
 
 
+
 const PhoneSignUp = () => {
     const [number, setNumber] = useState("");
     const [otp, setOtp] = useState("");

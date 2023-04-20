@@ -2,14 +2,27 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 //import styled from "styled-components";
 import GlobalStyle from "../GlobalStyle";
+import { useLocation } from 'react-router-dom';
 import { BsPersonCircle } from "react-icons/bs"
 import { GrAddCircle } from "react-icons/gr"
+import {BsFillCarFrontFill} from "react-icons/bs"
+import {MdDomainVerification} from "react-icons/md"
 import Login from "./authotication/components/Login";
 import { useState } from "react";
 import { propTypes } from "react-bootstrap/esm/Image";
 const Navbar = (props) => {
     <GlobalStyle />
-
+    // const Location=useLocation();
+    // const [publishride,showpublishride]=useState(false);
+    // useEffect(()=>{
+    //     if(location.pathname==='/Registration')
+    //     {
+    //         showpublishride(false);
+    //     }
+    //     else{
+    //         showpublishride(true);
+    //     }
+    // },[location])
 
 
     return (
@@ -33,9 +46,15 @@ const Navbar = (props) => {
                         />Publish Ride</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/published' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}>
-                            MyRides</NavLink>
+                        <NavLink to='/published' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}><BsFillCarFrontFill className="add" size={18} onClick={props.hc}
+                        />MyRides</NavLink>
                     </li>
+
+                    <li>
+                        <NavLink to='/Verification' style={{ textDecoration: 'none' }} className="navlink" onClick={props.hc}><MdDomainVerification className="add" size={18} onClick={props.hc}
+                        />Verification</NavLink>
+                    </li>
+
                 </ul>
 
 
