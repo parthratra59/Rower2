@@ -7,13 +7,15 @@ import { IconButton, Button, Text } from "@chakra-ui/react";
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 import BookRide from "./BookRide";
 
-const center = { lat: 26.84, lng: 75.56 }
-const Map = () => {
+
+const Map = (props) => {
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
         // once it will we loaded then we want places to load again
         libraries: ['places']
     })
+
+
 
     const [map, setMap] = useState(null)
     const [directionsResponse, setDirectionsResponse] = useState(null)
@@ -37,11 +39,11 @@ const Map = () => {
             destination: destiantionRef.current.value,
             travelMode: google.maps.TravelMode.DRIVING
 
-            });
-            setDirectionsResponse(results)
-            // bhaut sare direction honge but hum sirf first vale target kr rhe
-            setDistance(results.routes[0].legs[0].distance.text);
-            setDuration(results.routes[0].legs[0].distance.text);
+        });
+        setDirectionsResponse(results)
+        // bhaut sare direction honge but hum sirf first vale target kr rhe
+        setDistance(results.routes[0].legs[0].distance.text);
+        setDuration(results.routes[0].legs[0].duration.text);
 
     }
 
@@ -58,7 +60,7 @@ const Map = () => {
 
     return (
         <>
-            <GoogleMap center={center}
+            <GoogleMap
                 zoom={15}
                 mapContainerStyle={{
                     width: '100%', height: '100%'
@@ -76,15 +78,15 @@ const Map = () => {
 
 
 
-                <Marker position={center} />
+
                 {directionsResponse && <DirectionsRenderer directions={directionsResponse} />}
             </GoogleMap>
 
             <Autocomplete>
-                <input type="text" placeholder="origin" ref={originRef} />
+                <input type="text" placeholder="origin" ref={originRef} value={props.origin} />
             </Autocomplete>
             <Autocomplete>
-                <input type="text" placeholder="to" ref={destiantionRef} />
+                <input type="text" placeholder="to" ref={destiantionRef} value={props.destination} />
             </Autocomplete>
             <Button onClick={calculateRoute}>calculateRoute</Button>
             <Text>distance:{distance}</Text>

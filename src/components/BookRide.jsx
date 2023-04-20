@@ -6,19 +6,15 @@ import { Autocomplete, useJsApiLoader, GoogleMap, Marker } from "@react-google-m
 import { IconButton, Button, Text, calc } from "@chakra-ui/react";
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 import { useUserAuth } from "./authotication/context/UserAuthContext.js";
+import { ReactPropTypes } from "react";
 
 
-
-const BookRide = () => {
+const BookRide = (props) => {
     <GlobalStyle />
     // const styling = { color: '#f8dc5d', fontSize: "25px" }
     const styleCal = {
         color: "#f8dc5d"
     }
-
-    const rideContext = createContext();
-
-   
 
     //create Ride
     const { user } = useUserAuth();
@@ -45,11 +41,11 @@ const BookRide = () => {
             cost: cost,
             seats: seats,
         })
+
+
+
     }
-    useEffect(() => {
-        console.log(origin);
-        console.log(destination);
-    }, [origin, destination])
+    
 
     var remove = false;
     function click() {
@@ -153,7 +149,7 @@ const BookRide = () => {
                     </div>
 
 
-                    <Button onClick={calculateRoute}>calculateRoute</Button>
+                    <Button onClick={props.dataTransfer(origin, destination)}>calculateRoute</Button>
                     <Text style={{ color: 'white' }}>distance:{distance}</Text>
 
                     <Text style={{ color: 'white' }}>duration:{duration}</Text>

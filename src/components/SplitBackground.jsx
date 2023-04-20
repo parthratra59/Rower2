@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GlobalStyle from "../GlobalStyle";
 import Header from "./Header";
 import { ThemeProvider } from "styled-components";
@@ -13,7 +13,6 @@ import Home2 from "./authotication/components/Home2";
 import ProtectedRoute from "./authotication/components/ProtectedRoute";
 import { UserAuthContextProvider } from "./authotication/context/UserAuthContext";
 import Login from "./authotication/components/Login";
-import { useState } from "react";
 import Navbar from "./Navbar";
 // import Registration from "./Registration";
 import Map from "./Map";
@@ -23,6 +22,20 @@ import Published from "./published";
 
 
 const SplitBackground = () => {
+
+  const [destination, setdestination] = useState('');
+  const [origin, setorigin] = useState('');
+
+  function dataTransfer(origin, destination) {
+    setdestination(destination);
+    setorigin(origin);
+
+  }
+
+  useEffect(() => {
+    console.log(origin);
+    console.log(destination);
+  }, [origin, destination])
 
   const [Mapping, setMap] = useState(false);
   // const se hm c
@@ -44,7 +57,7 @@ const SplitBackground = () => {
           <div className="parent">
             <div className="child-1">
               {/* <Registration/> */}
-              {Mapping ? <Map /> : <MainLogo />}
+              {Mapping ? <Map origin={origin} destination={destination} /> : <MainLogo />}
               {/* <MainLogo /> */}
 
 
@@ -59,7 +72,7 @@ const SplitBackground = () => {
                   <Route path="/phonesignup" exact element={<PhoneSignUp />} />
                   <Route path="/Login" exact element={<Login />} />
                   <Route path="/signup" exact element={<Signup />} />
-                  <Route path="/BookRide" exact element={<BookRide />} />
+                  <Route path="/BookRide" exact element={<BookRide dataTransfer={dataTransfer} />} />
                   <Route path="/published" exact element={<Published />} />
 
 
