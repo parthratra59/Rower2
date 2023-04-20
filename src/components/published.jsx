@@ -6,12 +6,6 @@ import Rides from './rides.jsx';
 const Published = () => {
     const { logOut, user } = useUserAuth();
 
-
-
-
-
-
-
     const [rides, setRides] = useState([]);
     useEffect(() => {
         const q = query(collection(db, 'publishedRides'));
@@ -20,7 +14,7 @@ const Published = () => {
 
             querySnapshot.forEach((doc) => {
                 // if (user.email === doc.email) {
-                    ridesArr.push({ ...doc.data(), id: doc.id })
+                ridesArr.push({ ...doc.data(), id: doc.id })
                 // }
             });
             setRides(ridesArr)

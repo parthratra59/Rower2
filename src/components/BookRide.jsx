@@ -40,12 +40,14 @@ const BookRide = (props) => {
             time: time,
             cost: cost,
             seats: seats,
+            email: user.email,
         })
+        click();
 
 
 
     }
-    
+
 
     var remove = false;
     function click() {
@@ -67,6 +69,7 @@ const BookRide = (props) => {
     const [duration, setDuration] = useState('')
 
     async function calculateRoute() {
+
         if (originRef.current.value === '' || destiantionRef.current.value === '') {
             return
         }
@@ -102,27 +105,7 @@ const BookRide = (props) => {
     return (
 
         <>
-            <GoogleMap center={center}
-                zoom={15}
-                mapContainerStyle={{
-                    width: '0%', height: '0%'
 
-                }}
-                options={{
-                    zoomControl: false,
-                    streetViewControl: false,
-                    mapTypeControl: true,
-                    fullscreenControl: false,
-
-                }}
-                onLoad={map => setMap(map)}
-            >
-
-
-
-                <Marker position={center} />
-                {/* <Autocomplete/> */}
-            </GoogleMap>
             <div className="regs_container">
                 <form action="" className="forming" onSubmit={createRide}>
                     <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter Trip details:</h1>
@@ -149,18 +132,14 @@ const BookRide = (props) => {
                     </div>
 
 
-                    <Button onClick={props.dataTransfer(origin, destination)}>calculateRoute</Button>
-                    <Text style={{ color: 'white' }}>distance:{distance}</Text>
 
-                    <Text style={{ color: 'white' }}>duration:{duration}</Text>
-                    <IconButton icon={<FaLocationArrow />} style={{ color: 'red', height: 50 }}>heelo</IconButton>
 
-                    <button type="submit" className="btn" onClick={click} >
+                    <button type="submit" className="btn" onClick={props.dataTransfer(origin, destination)} >
                         Publish My Ride
                     </button>
 
                 </form>
-            </div>
+            </div >
         </>
     )
 }

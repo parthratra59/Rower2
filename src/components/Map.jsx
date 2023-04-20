@@ -75,22 +75,26 @@ const Map = (props) => {
                 }}
                 onLoad={map => setMap(map)}
             >
+                <div style={
+                    { display: "flex", justifyContent: "center", marginTop: "20px" }
+                }>
 
-
+                    <Button onClick={calculateRoute} style={
+                        { padding: "1%", backgroundColor: "black", color: "white" }
+                    }>calculateRoute</Button>
+                    <Button style={
+                        { padding: "1%", backgroundColor: "black", color: "white" }
+                    }>Duration: {duration}</Button>
+                    <Button style={
+                        { padding: "1%", backgroundColor: "black", color: "white" }
+                    }>Distance: {distance}</Button>
+                </div>
 
 
                 {directionsResponse && <DirectionsRenderer directions={directionsResponse} />}
             </GoogleMap>
-
-            <Autocomplete>
-                <input type="text" placeholder="origin" ref={originRef} value={props.origin} />
-            </Autocomplete>
-            <Autocomplete>
-                <input type="text" placeholder="to" ref={destiantionRef} value={props.destination} />
-            </Autocomplete>
-            <Button onClick={calculateRoute}>calculateRoute</Button>
-            <Text>distance:{distance}</Text>
-            <Text>duration:{duration}</Text>
+            <input type="text" placeholder="origin" ref={originRef} value={props.origin} />
+            <input type="text" placeholder="to" ref={destiantionRef} value={props.destination} />
             <IconButton icon={<FaLocationArrow />} onClick={clearRoute} style={{ color: 'red', height: 50 }}>heelo</IconButton>
 
 
