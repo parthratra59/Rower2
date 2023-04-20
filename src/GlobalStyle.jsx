@@ -183,7 +183,7 @@ ${'' /* logo desingn */}
     font-size:200px;
 }
 
-${'' /* Registration form */}
+
 .regs_container
 {
     width:100%;
@@ -191,7 +191,8 @@ ${'' /* Registration form */}
     display:flex;
     align-items:center;
     justify-content:center;   
-    ${'' /* z-index:'modal'; */}
+    margin-top:-20%;
+
 }
 
 
