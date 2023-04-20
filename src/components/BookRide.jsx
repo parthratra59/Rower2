@@ -1,11 +1,13 @@
 import GlobalStyle from "../GlobalStyle";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useContext, createContext } from 'react';
 import { db } from './authotication/firebase.js';
 import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
 import { Autocomplete, useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
-import { IconButton, Button, Text } from "@chakra-ui/react";
+import { IconButton, Button, Text, calc } from "@chakra-ui/react";
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 import { useUserAuth } from "./authotication/context/UserAuthContext.js";
+
+
 
 const BookRide = () => {
     <GlobalStyle />
@@ -13,6 +15,10 @@ const BookRide = () => {
     const styleCal = {
         color: "#f8dc5d"
     }
+
+    const rideContext = createContext();
+
+   
 
     //create Ride
     const { user } = useUserAuth();
@@ -22,7 +28,7 @@ const BookRide = () => {
     const [date, setdate] = useState('');
     const [cost, setcost] = useState('');
     const [seats, setseats] = useState('');
-    const [published, setpublished] = useState('');
+
 
     const createRide = async (e) => {
         e.preventDefault(e)
@@ -38,16 +44,12 @@ const BookRide = () => {
             time: time,
             cost: cost,
             seats: seats,
-            email: user.email,
         })
-        setorigin('');
-        setdestination('');
-        setdate('');
-        settime('');
-        setcost('');
-        setseats('');
-
     }
+    useEffect(() => {
+        console.log(origin);
+        console.log(destination);
+    }, [origin, destination])
 
     var remove = false;
     function click() {
@@ -60,6 +62,33 @@ const BookRide = () => {
 
 
     }
+    /** @type React.MutableRefObject<HTMLInputElement> */
+    const originRef = useRef();
+    /** @type React.MutableRefObject<HTMLInputElement> */
+    const destiantionRef = useRef();
+    const [directionsResponse, setDirectionsResponse] = useState(null)
+    const [distance, setDistance] = useState('')
+    const [duration, setDuration] = useState('')
+
+    async function calculateRoute() {
+        if (originRef.current.value === '' || destiantionRef.current.value === '') {
+            return
+        }
+        const google = window.google;
+        const directionService = new google.maps.DirectionsService();
+        const results = await directionService.route({
+            origin: originRef.current.value,
+            destination: destiantionRef.current.value,
+            travelMode: google.maps.TravelMode.DRIVING
+
+        });
+        setDirectionsResponse(results)
+        // bhaut sare direction honge but hum sirf first vale target kr rhe
+        setDistance(results.routes[0].legs[0].distance.text);
+        setDuration(results.routes[0].legs[0].duration.text);
+
+    }
+
 
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
@@ -68,7 +97,7 @@ const BookRide = () => {
     })
     const center = { lat: 26.84, lng: 75.56 }
 
-    const [map, setMap] = useState(/**@type google.maps.Map */(null))
+    const [map, setMap] = useState(/**@type google.maps.Map */(null));
 
 
 
@@ -103,12 +132,12 @@ const BookRide = () => {
                     <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter Trip details:</h1>
                     <div className="input-fields">
                         <Autocomplete>
-                            <input type='text' placeholder="Leaving From..." style={styleCal} name='origin' value={origin} onChange={(e) => setorigin(e.target.value)} />
+                            <input type='text' placeholder="Leaving From..." style={styleCal} id='origin' onChange={(e) => setorigin(e.target.value)} ref={originRef} />
                         </Autocomplete>
                     </div>
                     <div className="input-fields">
                         <Autocomplete>
-                            <input type='text' placeholder="Going to..." style={styleCal} name="destination" value={destination} onChange={(e) => setdestination(e.target.value)} />
+                            <input type='text' placeholder="Going to..." style={styleCal} id="destination" onChange={(e) => setdestination(e.target.value)} ref={destiantionRef} />
                         </Autocomplete>
                     </div>
                     <div className="input-fieldsi">
@@ -124,10 +153,10 @@ const BookRide = () => {
                     </div>
 
 
-                    <Button >calculateRoute</Button>
-                    <Text style={{ color: 'white' }}>distance</Text>
+                    <Button onClick={calculateRoute}>calculateRoute</Button>
+                    <Text style={{ color: 'white' }}>distance:{distance}</Text>
 
-                    <Text style={{ color: 'white' }}>duration</Text>
+                    <Text style={{ color: 'white' }}>duration:{duration}</Text>
                     <IconButton icon={<FaLocationArrow />} style={{ color: 'red', height: 50 }}>heelo</IconButton>
 
                     <button type="submit" className="btn" onClick={click} >

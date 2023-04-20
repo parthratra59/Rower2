@@ -1,10 +1,10 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import GlobalStyle from "../GlobalStyle";
 import { db } from './authotication/firebase.js';
 import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
 import { useJsApiLoader, GoogleMap, Marker, Autocomplete } from "@react-google-maps/api";
 // import { Autocomplete } from "@react-google-maps/api";
-import { IconButton ,Button,Text} from "@chakra-ui/react";
+import { IconButton, Button, Text } from "@chakra-ui/react";
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 
 const Registration = () => {
@@ -32,10 +32,16 @@ const Registration = () => {
         setAvailableSeats('');
     }
 
+
     const [origin, setorigin] = useState('');
     const [destination, setdestination] = useState('');
     const [date, setdate] = useState('');
     const [availableSeats, setAvailableSeats] = useState('');
+    
+    useEffect(() => {
+        console.log(origin);
+        console.log(destination);
+    }, [origin, destination])
 
     function clearInputs() {
         document.getElementById('origin').value = '';
@@ -54,16 +60,16 @@ const Registration = () => {
     const [directionsResponse, setDirectionsResponse] = useState(null)
     const [distance, setDistance] = useState('')
     const [duration, setDuration] = useState('')
-  
-    /** @type React.MutableRefObject<HTMLInputElement> */
-    const originRef = useRef()
-    /** @type React.MutableRefObject<HTMLInputElement> */
-    const destiantionRef = useRef()
+
+    // /** @type React.MutableRefObject<HTMLInputElement> */
+    // const originRef = useRef()
+    // /** @type React.MutableRefObject<HTMLInputElement> */
+    // const destiantionRef = useRef()
 
 
     return (
         <>
-        <GoogleMap center={center}
+            <GoogleMap center={center}
                 zoom={15}
                 mapContainerStyle={{
                     width: '0%', height: '0%'
@@ -89,31 +95,30 @@ const Registration = () => {
                     <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter trip details:</h1>
                     <div className="input-fields" >
                         <Autocomplete>
-                        <input type='text' placeholder="Leaving from..." style={styleCal} id="origin" ref={originRef} onChange={(e) => { setorigin(e.target.value) }} />
+                            <input type='text' placeholder="Leaving from..." style={styleCal} id="origin" onChange={(e) => { setorigin(e.target.value) }} />
                         </Autocomplete>
                     </div>
                     <div className="input-fields">
-                    <Autocomplete>
-                        
-                        <input type='text' placeholder="Going to..." style={styleCal} id="destination" ref={destiantionRef} onChange={(e) => { setdestination(e.target.value) }} />
+                        <Autocomplete>
+
+                            <input type='text' placeholder="Going to..." style={styleCal} id="destination"  onChange={(e) => { setdestination(e.target.value) }} />
                         </Autocomplete>
                     </div>
                     <div className="input-fieldsi">
                         <input type='date' className="inputing" style={styleCal} id="date" value={date} onChange={(e) => { setdate(e.target.value) }} />
                         <label htmlfor="username"></label>
-                        <input type='number' className="inputing" placeholder="Passenger..." style={{ color: "#f8dc5d" }} id="seats" value={availableSeats} 
-                        onChange={(e) => {  
-                            if(e.target.value>=1)
-                            {
-                                setAvailableSeats(e.target.value) 
-                            }
+                        <input type='number' className="inputing" placeholder="Passenger..." style={{ color: "#f8dc5d" }} id="seats" value={availableSeats}
+                            onChange={(e) => {
+                                if (e.target.value >= 1) {
+                                    setAvailableSeats(e.target.value)
+                                }
                             }} />
                     </div>
                     <Button >calculateRoute</Button>
-                    <Text style={{color:'white'}}>distance</Text>
-                    <Text style={{color:'white'}}>duration</Text>
-                    <IconButton icon ={<FaLocationArrow/>} style={{color:'red',height:50}} >heelo</IconButton>
-                    <button type="submit" className="btn"  onClick={clearInputs}>
+                    <Text style={{ color: 'white' }}>distance</Text>
+                    <Text style={{ color: 'white' }}>duration</Text>
+                    <IconButton icon={<FaLocationArrow />} style={{ color: 'red', height: 50 }} >heelo</IconButton>
+                    <button type="submit" className="btn" onClick={clearInputs}>
                         Search
                     </button>
 
@@ -121,12 +126,12 @@ const Registration = () => {
                 </form>
             </div >
 
-            
-            
-               
+
+
+
 
         </>
     )
 }
-export default Registration ;
+export default Registration;
 
