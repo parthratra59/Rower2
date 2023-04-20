@@ -26,12 +26,14 @@ const SplitBackground = () => {
 
   const [destination, setdestination] = useState('');
   const [origin, setorigin] = useState('');
+  const [email, setemail] = useState('');
 
   function dataTransfer(origin, destination) {
     setdestination(destination);
     setorigin(origin);
 
   }
+
 
   useEffect(() => {
     console.log(origin);
@@ -69,13 +71,13 @@ const SplitBackground = () => {
                 <Navbar hc={handleclick} hc2={handleclick2} />
                 <Routes>
                   <Route exact path='/' element={<Home />} />
-                  <Route path='/PublishRide' element={<PublishRide />} />
+                  <Route path='/PublishRide' element={<PublishRide dataTransfer={dataTransfer} />} />
                   <Route path="/phonesignup" exact element={<PhoneSignUp />} />
                   <Route path="/Login" exact element={<Login />} />
                   <Route path="/signup" exact element={<Signup />} />
                   <Route path="/BookRide" exact element={<BookRide dataTransfer={dataTransfer} />} />
                   <Route path="/published" exact element={<Published />} />
-                  <Route path="/Verification" exact element={<Verification/>}/>
+                  <Route path="/Verification" exact element={<Verification />} />
 
 
                   <Route path="/home"

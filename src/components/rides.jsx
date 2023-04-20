@@ -11,6 +11,7 @@ const Rides = ({ ride }) => {
     }
     return (
         <div style={myStyle}>
+            <h1>Result</h1>
             <p>From : {ride.origin}</p>
             <p>To   : {ride.destination}</p>
             <p>Time : {ride.time}</p>
