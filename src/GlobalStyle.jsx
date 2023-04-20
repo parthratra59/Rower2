@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: gt-eesti, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color:black;
     font-size:18px;
+   
 }
 
 .parent
@@ -19,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     display:flex;
     height:100vh;
     width:100%
+   
 }
 //Hi this is a comment;
 .child-1{
@@ -251,7 +253,8 @@ label{
     ${'' /* position:"absolute"; */}
     display:flex;
     ${'' /* flex-direction:column; */}
-   
+    justify-content:center;
+    align-items:center;
     ${'' /* justify-content:center; */}
     
     ${'' /* margin:15px; */}

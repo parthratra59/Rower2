@@ -93,9 +93,9 @@ const Map = (props) => {
 
                 {directionsResponse && <DirectionsRenderer directions={directionsResponse} />}
             </GoogleMap>
-            <input type="text" placeholder="origin" ref={originRef} value={props.origin} />
-            <input type="text" placeholder="to" ref={destiantionRef} value={props.destination} />
-            <IconButton icon={<FaLocationArrow />} onClick={clearRoute} style={{ color: 'red', height: 50 }}>heelo</IconButton>
+            <input type="text" style={{visibility:"hidden"}} placeholder="origin" ref={originRef} value={props.origin} />
+            <input type="text" style={{visibility:"hidden"}} placeholder="to" ref={destiantionRef} value={props.destination} />
+            {/* <IconButton icon={<FaLocationArrow />} onClick={clearRoute} style={{ color: 'red', height: 50 }}>heelo</IconButton> */}
 
 
 

@@ -1,15 +1,14 @@
 import GlobalStyle from "../GlobalStyle";
-import React, { useState, useEffect, useRef, useContext, createContext } from 'react';
+import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { db } from './authotication/firebase.js';
 import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
 import { Autocomplete, useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
-import { IconButton, Button, Text, calc } from "@chakra-ui/react";
+import { IconButton, Button, Text } from "@chakra-ui/react";
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 import { useUserAuth } from "./authotication/context/UserAuthContext.js";
-import { ReactPropTypes } from "react";
 
-
-const BookRide = (props) => {
+const BookRide = () => {
     <GlobalStyle />
     // const styling = { color: '#f8dc5d', fontSize: "25px" }
     const styleCal = {
@@ -24,7 +23,7 @@ const BookRide = (props) => {
     const [date, setdate] = useState('');
     const [cost, setcost] = useState('');
     const [seats, setseats] = useState('');
-
+    const [published, setpublished] = useState('');
 
     const createRide = async (e) => {
         e.preventDefault(e)
@@ -42,12 +41,14 @@ const BookRide = (props) => {
             seats: seats,
             email: user.email,
         })
-        click();
-
-
+        setorigin('');
+        setdestination('');
+        setdate('');
+        settime('');
+        setcost('');
+        setseats('');
 
     }
-
 
     var remove = false;
     function click() {
@@ -60,33 +61,7 @@ const BookRide = (props) => {
 
 
     }
-    /** @type React.MutableRefObject<HTMLInputElement> */
-    const originRef = useRef();
-    /** @type React.MutableRefObject<HTMLInputElement> */
-    const destiantionRef = useRef();
-    const [directionsResponse, setDirectionsResponse] = useState(null)
-    const [distance, setDistance] = useState('')
-    const [duration, setDuration] = useState('')
 
-    async function calculateRoute() {
-
-        if (originRef.current.value === '' || destiantionRef.current.value === '') {
-            return
-        }
-        const google = window.google;
-        const directionService = new google.maps.DirectionsService();
-        const results = await directionService.route({
-            origin: originRef.current.value,
-            destination: destiantionRef.current.value,
-            travelMode: google.maps.TravelMode.DRIVING
-
-        });
-        setDirectionsResponse(results)
-        // bhaut sare direction honge but hum sirf first vale target kr rhe
-        setDistance(results.routes[0].legs[0].distance.text);
-        setDuration(results.routes[0].legs[0].duration.text);
-
-    }
 
 
     const { isLoaded } = useJsApiLoader({
@@ -96,27 +71,47 @@ const BookRide = (props) => {
     })
     const center = { lat: 26.84, lng: 75.56 }
 
-    const [map, setMap] = useState(/**@type google.maps.Map */(null));
+    const [map, setMap] = useState(/**@type google.maps.Map */(null))
 
-
+    
 
 
 
     return (
 
         <>
+            <GoogleMap center={center}
+                zoom={15}
+                mapContainerStyle={{
+                    width: '0%', height: '0%'
 
+                }}
+                options={{
+                    zoomControl: false,
+                    streetViewControl: false,
+                    mapTypeControl: true,
+                    fullscreenControl: false,
+
+                }}
+                onLoad={map => setMap(map)}
+            >
+
+
+
+                <Marker position={center} />
+                {/* <Autocomplete/> */}
+            </GoogleMap>
             <div className="regs_container">
                 <form action="" className="forming" onSubmit={createRide}>
                     <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter Trip details:</h1>
                     <div className="input-fields">
                         <Autocomplete>
-                            <input type='text' placeholder="Leaving From..." style={styleCal} id='origin' onChange={(e) => setorigin(e.target.value)} ref={originRef} />
+                            <input type='text' placeholder="Leaving From..." style={styleCal} name='origin' value={origin} onChange={(e) => setorigin(e.target.value)} />
                         </Autocomplete>
                     </div>
                     <div className="input-fields">
                         <Autocomplete>
-                            <input type='text' placeholder="Going to..." style={styleCal} id="destination" onChange={(e) => setdestination(e.target.value)} ref={destiantionRef} />
+                            <input type='text' placeholder="Going to..." style={styleCal} name="destination" value={destination} onChange={(e) => setdestination(e.target.value)} />
                         </Autocomplete>
                     </div>
                     <div className="input-fieldsi">
@@ -132,14 +127,14 @@ const BookRide = (props) => {
                     </div>
 
 
+                    
 
-
-                    <button type="submit" className="btn" onClick={props.dataTransfer(origin, destination)} >
+                    <button type="submit" className="btn" onClick={click} >
                         Publish My Ride
                     </button>
 
                 </form>
-            </div >
+            </div>
         </>
     )
 }
