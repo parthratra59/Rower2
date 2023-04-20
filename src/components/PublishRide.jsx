@@ -17,7 +17,7 @@ const PublishRide = (props) => {
   const [destination, setdestination] = useState('');
   const [date, setdate] = useState('');
   const [availableSeats, setAvailableSeats] = useState('');
-  const [Value, setValue] = useState(false);
+
 
 
 
@@ -59,15 +59,9 @@ const PublishRide = (props) => {
   }
 
 
-  function value() {
-    setValue = true;
-  }
 
 
-  useEffect(() => {
-    console.log(origin);
-    console.log(destination);
-  }, [origin, destination])
+
 
   function clearInputs() {
     document.getElementById('origin').value = '';

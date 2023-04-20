@@ -60,41 +60,28 @@ const Map = (props) => {
 
     return (
         <>
-            <GoogleMap
-                zoom={15}
-                mapContainerStyle={{
-                    width: '100%', height: '100%'
-
-                }}
-                options={{
-                    zoomControl: false,
-                    streetViewControl: false,
-                    mapTypeControl: true,
-                    fullscreenControl: false,
-
-                }}
-                onLoad={map => setMap(map)}
-            >
-                <div style={
-                    { display: "flex", justifyContent: "center", marginTop: "20px" }
-                }>
-
-                    <Button onClick={calculateRoute} style={
-                        { padding: "1%", backgroundColor: "black", color: "white" }
-                    }>calculateRoute</Button>
-                    <Button style={
-                        { padding: "1%", backgroundColor: "black", color: "white" }
-                    }>Duration: {duration}</Button>
-                    <Button style={
-                        { padding: "1%", backgroundColor: "black", color: "white" }
-                    }>Distance: {distance}</Button>
-                </div>
-
-
-                {directionsResponse && <DirectionsRenderer directions={directionsResponse} />}
-            </GoogleMap>
-            <input type="text" style={{visibility:"hidden"}} placeholder="origin" ref={originRef} value={props.origin} />
-            <input type="text" style={{visibility:"hidden"}} placeholder="to" ref={destiantionRef} value={props.destination} />
+            {isLoaded && (
+                <GoogleMap
+                    zoom={15}
+                    mapContainerStyle={{ width: '100%', height: '100%' }}
+                    options={{
+                        zoomControl: false,
+                        streetViewControl: false,
+                        mapTypeControl: true,
+                        fullscreenControl: false,
+                    }}
+                    onLoad={map => setMap(map)}
+                >
+                    <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+                        <Button onClick={calculateRoute} style={{ padding: "1%", backgroundColor: "black", color: "white" }}>calculateRoute</Button>
+                        <Button style={{ padding: "1%", backgroundColor: "black", color: "white" }}>Duration: {duration}</Button>
+                        <Button style={{ padding: "1%", backgroundColor: "black", color: "white" }}>Distance: {distance}</Button>
+                    </div>
+                    {directionsResponse && <DirectionsRenderer directions={directionsResponse} />}
+                </GoogleMap>
+            )}
+            <input type="text" placeholder="origin" ref={originRef} value={props.origin} />
+            <input type="text" placeholder="to" ref={destiantionRef} value={props.destination} />
             {/* <IconButton icon={<FaLocationArrow />} onClick={clearRoute} style={{ color: 'red', height: 50 }}>heelo</IconButton> */}
 
 

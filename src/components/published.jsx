@@ -13,7 +13,7 @@ const Published = () => {
 
     const [rides, setRides] = useState([]);
 
-        
+
 
     useEffect(() => {
 
@@ -33,7 +33,7 @@ const Published = () => {
 
     return (
         <div>
-            <h1>{user.email}</h1>
+            <h1 style={{ fontSize: "40px" ,marginLeft: "15%" }}>{user.email}</h1>
             {rides.map((ride, index) =>
             (
                 <Rides

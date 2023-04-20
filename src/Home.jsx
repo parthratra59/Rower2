@@ -33,8 +33,8 @@ const Home = () => {
             <div>
                 <p style={mystyle} className="homeParagraph">
                     <h1 style={mystyleH1}>&lt;&gt;</h1>
-                    <span className="s0">"</span><span className="s1">R</span><span className="s2">O</span><span className="s3" >W</span><span className="s4">E</span><span className="s5">R</span> TAXI PROVIDE CHEAP AND FUN  TRAVEL  TO THE STUDENTS,   AND HELP  THEM POOL TAXI’S
-                    EASILY~! TRAVELLING MINIMUM 30KM TO REACH THER HEART OF THE PINK CITY HAS ALWAYS LED TO EMPTY POCKETS OF STUDENTS.
+                    <span className="s0">"</span><span className="s1">R</span><span className="s2">O</span><span className="s3" >W</span><span className="s4">E</span><span className="s5">R</span> TAXI PROVIDE CHEAP AND FUN  TRAVEL  TO THE CUSTOMER,   AND HELP  THEM POOL TAXI’S
+                    EASILY~! TRAVELLING MINIMUM 30KM TO REACH THER HEART OF THE PINK CITY HAS ALWAYS LED TO EMPTY POCKETS OF CUSTOMER.
                     -!NOT ANYMORE!-
 
                     <h1 style={mystyleH1}>&lt;/&gt;</h1>

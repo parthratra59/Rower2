@@ -6,8 +6,8 @@ const Rides = ({ ride }) => {
         borderRadius: "40px",
         margin: "2%",
         padding: "2%",
-        marginLeft: "10%",
-        marginRight: "40%",
+        marginLeft: "30%",
+        marginRight: "30%",
     }
     return (
         <div style={myStyle}>

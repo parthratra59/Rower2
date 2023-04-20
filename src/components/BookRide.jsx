@@ -8,13 +8,12 @@ import { IconButton, Button, Text } from "@chakra-ui/react";
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 import { useUserAuth } from "./authotication/context/UserAuthContext.js";
 
-const BookRide = () => {
-    <GlobalStyle />
+const BookRide = (props) => {
+
     // const styling = { color: '#f8dc5d', fontSize: "25px" }
     const styleCal = {
         color: "#f8dc5d"
     }
-
     //create Ride
     const { user } = useUserAuth();
     const [origin, setorigin] = useState('');
@@ -69,74 +68,56 @@ const BookRide = () => {
         // once it will we loaded then we want places to load again
         libraries: ['places']
     })
-    const center = { lat: 26.84, lng: 75.56 }
 
-    const [map, setMap] = useState(/**@type google.maps.Map */(null))
+        { isLoaded && <GlobalStyle />
+}
 
-    
-
-
-
-    return (
-
-        <>
-            <GoogleMap center={center}
-                zoom={15}
-                mapContainerStyle={{
-                    width: '0%', height: '0%'
-
-                }}
-                options={{
-                    zoomControl: false,
-                    streetViewControl: false,
-                    mapTypeControl: true,
-                    fullscreenControl: false,
-
-                }}
-                onLoad={map => setMap(map)}
-            >
+const [map, setMap] = useState(/**@type google.maps.Map */(null))
 
 
 
-                <Marker position={center} />
-                {/* <Autocomplete/> */}
-            </GoogleMap>
-            <div className="regs_container">
-                <form action="" className="forming" onSubmit={createRide}>
-                    <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter Trip details:</h1>
-                    <div className="input-fields">
-                        <Autocomplete>
-                            <input type='text' placeholder="Leaving From..." style={styleCal} name='origin' value={origin} onChange={(e) => setorigin(e.target.value)} />
-                        </Autocomplete>
-                    </div>
-                    <div className="input-fields">
-                        <Autocomplete>
-                            <input type='text' placeholder="Going to..." style={styleCal} name="destination" value={destination} onChange={(e) => setdestination(e.target.value)} />
-                        </Autocomplete>
-                    </div>
-                    <div className="input-fieldsi">
-                        {/* <label htmlfor="" className="subinput"></label> */}
-                        <input type='date' className="inputing" style={styleCal} id="date" onChange={(e) => setdate(e.target.value)} />
-                        <input type='time' className="inputing" style={styleCal} id="time" onChange={(e) => settime(e.target.value)} />
-
-                    </div>
-                    <div className="input-fieldsi">
-                        {/* <label htmlfor="" className="subinput"></label> */}
-                        <input type='number' className="inputing" placeholder="Seats Available" style={{ color: "#f8dc5d" }} id="seats" onChange={(e) => setseats(e.target.value)} />
-                        <input type='number' className="inputing" placeholder="Cost Per Person" style={{ color: "#f8dc5d" }} id="cost" onChange={(e) => setcost(e.target.value)} />
-                    </div>
 
 
-                    
+return (
 
-                    <button type="submit" className="btn" onClick={click} >
-                        Publish My Ride
-                    </button>
+    <>
 
-                </form>
-            </div>
-        </>
-    )
+        <div className="regs_container">
+            <form action="" className="forming" onSubmit={createRide}>
+                <h1 style={{ fontSize: "40px", color: "#f8dc5d" }}>Enter Trip details:</h1>
+                <div className="input-fields">
+                    <Autocomplete>
+                        <input type='text' placeholder="Leaving From..." style={styleCal} name='origin' value={origin} onChange={(e) => setorigin(e.target.value)} />
+                    </Autocomplete>
+                </div>
+                <div className="input-fields">
+                    <Autocomplete>
+                        <input type='text' placeholder="Going to..." style={styleCal} name="destination" value={destination} onChange={(e) => setdestination(e.target.value)} />
+                    </Autocomplete>
+                </div>
+                <div className="input-fieldsi">
+                    {/* <label htmlfor="" className="subinput"></label> */}
+                    <input type='date' className="inputing" style={styleCal} id="date" onChange={(e) => setdate(e.target.value)} />
+                    <input type='time' className="inputing" style={styleCal} id="time" onChange={(e) => settime(e.target.value)} />
+
+                </div>
+                <div className="input-fieldsi">
+                    {/* <label htmlfor="" className="subinput"></label> */}
+                    <input type='number' className="inputing" placeholder="Seats Available" style={{ color: "#f8dc5d" }} id="seats" onChange={(e) => setseats(e.target.value)} />
+                    <input type='number' className="inputing" placeholder="Cost Per Person" style={{ color: "#f8dc5d" }} id="cost" onChange={(e) => setcost(e.target.value)} />
+                </div>
+
+
+
+
+                <button type="submit" className="btn" onClick={click} onChange={props.dataTransfer(origin, destination)} >
+                    Publish My Ride
+                </button>
+
+            </form>
+        </div>
+    </>
+)
 }
 
 export default BookRide
