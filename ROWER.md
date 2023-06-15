@@ -12,7 +12,7 @@ This project is a carpooling web application designed and developed to facilitat
 
 To run the project locally, follow these steps:
   - Clone the repository:<br>
-    `git clone https://github.com/ParthRatra/Sandese.git`
+    ``
   - Navigate to the project directory and input:<br>
     `cd project-directory`<br>
     `npm install`<br>
@@ -34,7 +34,7 @@ Firebase: Utilized for the authentication system and real-time database manageme
 
 Restful API: Integrated to validate drivers' credentials by verifying their Aadhar card and Driving License details.
 
-Google Cloud Platform: Employed for hosting the application and accessing additional cloud services.
+Google Cloud Platform: Employs for autocomplete feature.
 
 
 
