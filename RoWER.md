@@ -1,4 +1,4 @@
-# SANDESE APP
+# ROWER
 
 ### About the Application
 
