@@ -1,7 +1,44 @@
-ROWER TAXI
+# ROWER 
+
+### About the Application
+This project is a carpooling web application designed and developed to facilitate cost-effective and convenient transportation for riders. The application includes various features such as publishing rides, booking rides, scheduling rides through a calendar, and validating drivers' credentials using a Restful API. The application was built using HTML, CSS, JavaScript (React.js), Firebase, Restful API, and Google Cloud Platform.
 
 
-->This project is a carpooling web application designed and developed to facilitate cost-effective and convenient transportation for riders. The application includes various features such as publishing rides, booking rides, scheduling rides through a calendar, and validating drivers' credentials using a Restful API. The application was built using HTML, CSS, JavaScript (React.js), Firebase, Restful API, and Google Cloud Platform.
+## Pre-Requisites
+ - Node.js(latest version) installed on the local environment.
+ - npm (Node Package Manager) installed on your local environment.
+
+## How to Run?
+
+To run the project locally, follow these steps:
+  - Clone the repository:<br>
+    `git clone https://github.com/ParthRatra/Sandese.git`
+  - Navigate to the project directory and input:<br>
+    `cd project-directory`<br>
+    `npm install`<br>
+    `npm start`<br>                                                 
+                                               
+                                               
+  This will start the project locally and you can access it in your web browser by visiting http://localhost:3000
+  
+  
+## Technologies Used
+
+HTML: Used to structure the web pages of the application.
+
+CSS: Employed for styling and enhancing the visual appearance of the web pages.
+
+JavaScript (React.js): Used to develop the interactive and dynamic components of the web application.
+
+Firebase: Utilized for the authentication system and real-time database management.
+
+Restful API: Integrated to validate drivers' credentials by verifying their Aadhar card and Driving License details.
+
+Google Cloud Platform: Employed for hosting the application and accessing additional cloud services.
+
+
+
+## Glimpses of the application
 
 Key Features
 ->Login/Sign-up Authentication: The application provides a secure authentication system using a Realtime database, allowing users to create an account and log in to access the carpooling services.
@@ -50,33 +87,7 @@ Database which I have created:-
 
 ![image](https://github.com/ParthRatra/Rower2/assets/90822015/2e504f7e-063c-470d-872c-da26fabd2146)
 
-Technologies Used
-HTML: Used to structure the web pages of the application.
 
-CSS: Employed for styling and enhancing the visual appearance of the web pages.
-
-JavaScript (React.js): Used to develop the interactive and dynamic components of the web application.
-
-Firebase: Utilized for the authentication system and real-time database management.
-
-Restful API: Integrated to validate drivers' credentials by verifying their Aadhar card and Driving License details.
-
-Google Cloud Platform: Employed for hosting the application and accessing additional cloud services.
-
-To run the project locally, follow these steps:
-
-
-
-
-                                                Clone the repository:
-                                                  ->git clone
-                                                      (https://github.com/ParthRatra/Rower2.git)
-                                                Navigate to the project directory:
-                                                ->cd project-directory
-                                                npm install
-                                                npm start
-  This will start the project locally and you can access it in your web browser by visiting http://localhost:3000
-  Note: Make sure you have Node.js and npm (Node Package Manager) installed on your machine before running these commands.
 
 
 
