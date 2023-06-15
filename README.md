@@ -7,11 +7,32 @@ This project is a carpooling web application designed and developed to facilitat
 Key Features
 Login/Sign-up Authentication: The application provides a secure authentication system using a Realtime database, allowing users to create an account and log in to access the carpooling services.
 
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/ab29afe3-2a94-4c94-8cba-fbb86b844e0d)
+
+
+
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/d2905a44-4eaf-4974-b788-e3bd6fd7a632)
+
 
 
 Publish a Ride: Riders can publish their ride details on the app, enabling them to find co-passengers and significantly reduce their travel costs by 60-70%.
 
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/46dcc378-31f1-4aa6-81b4-d641f122db4e)
+
+
 Book a Ride: Users can search and book rides published by other riders based on their desired destination and schedule.
+
+
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/3ec47844-543b-476e-8776-52a5da9692c5)
+
+
+Autocomplete for Distance Tracking: Leveraging the Autocomplete feature from the Google Cloud Platform, the application enables users to track distance routes accurately and efficiently
+
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/dbf2da3d-b677-4beb-ace4-34725fa0f437)
+
+
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/ce278db6-ebd8-46c8-9d00-2c9d3c686f69)
+
 
 Calendar for Scheduling Rides: The application includes a calendar feature that allows users to schedule rides according to their preferred date and time.
 
