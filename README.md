@@ -43,7 +43,7 @@ DATABASE OF AUTHENTICATION
 
 Authentication of Drivers: The Restful API integration enables the validation of drivers' Aadhar card and Driving License details with an accuracy rate of 80-90%.
 
-![image](https://github.com/ParthRatra/Rower2/assets/90822015/f359a16e-8df2-4960-8c43-33842c2d64ee)
+
 
 Database which I have created:-
 ![image](https://github.com/ParthRatra/Rower2/assets/90822015/68250783-dc4f-4c1c-9313-7aae525f1834)
