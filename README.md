@@ -28,7 +28,7 @@ DATABASE OF AUTHENTICATION
 ->Book a Ride: Users can search and book rides published by other riders based on their desired destination and schedule.
 
 
-![image](https://github.com/ParthRatra/Rower2/assets/90822015/3ec47844-543b-476e-8776-52a5da9692c5)
+
 
 
 ->Autocomplete for Distance Tracking: Leveraging the Autocomplete feature from the Google Cloud Platform, the application enables users to track distance routes accurately and efficiently
@@ -43,7 +43,7 @@ DATABASE OF AUTHENTICATION
 
 Authentication of Drivers: The Restful API integration enables the validation of drivers' Aadhar card and Driving License details with an accuracy rate of 80-90%.
 
-![image](https://github.com/ParthRatra/Rower2/assets/90822015/0f55b3e2-a121-4d28-9d12-71117775e8c0)
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/f359a16e-8df2-4960-8c43-33842c2d64ee)
 
 Database which I have created:-
 ![image](https://github.com/ParthRatra/Rower2/assets/90822015/68250783-dc4f-4c1c-9313-7aae525f1834)
