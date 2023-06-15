@@ -1,7 +1,6 @@
 ROWER TAXI
 
 
-
 ->This project is a carpooling web application designed and developed to facilitate cost-effective and convenient transportation for riders. The application includes various features such as publishing rides, booking rides, scheduling rides through a calendar, and validating drivers' credentials using a Restful API. The application was built using HTML, CSS, JavaScript (React.js), Firebase, Restful API, and Google Cloud Platform.
 
 Key Features
@@ -33,7 +32,8 @@ DATABASE OF AUTHENTICATION
 
 ->Autocomplete for Distance Tracking: Leveraging the Autocomplete feature from the Google Cloud Platform, the application enables users to track distance routes accurately and efficiently
 
-![image](https://github.com/ParthRatra/Rower2/assets/90822015/dbf2da3d-b677-4beb-ace4-34725fa0f437)
+![image](https://github.com/ParthRatra/Rower2/assets/90822015/b87c1681-d3a0-4cb4-9623-2ba44264e5fe)
+
 
 
 ![image](https://github.com/ParthRatra/Rower2/assets/90822015/ce278db6-ebd8-46c8-9d00-2c9d3c686f69)
