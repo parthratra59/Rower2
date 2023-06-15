@@ -1,4 +1,7 @@
-Carpooling Web Application
+#ROWER TAXI
+
+
+
 This project is a carpooling web application designed and developed to facilitate cost-effective and convenient transportation for riders. The application includes various features such as publishing rides, booking rides, scheduling rides through a calendar, and validating drivers' credentials using a Restful API. The application was built using HTML, CSS, JavaScript (React.js), Firebase, Restful API, and Google Cloud Platform.
 
 Key Features
