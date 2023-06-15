@@ -63,14 +63,20 @@ Restful API: Integrated to validate drivers' credentials by verifying their Aadh
 
 Google Cloud Platform: Employed for hosting the application and accessing additional cloud services.
 
-How to Use
-Clone the repository: git clone 
-Install dependencies: npm install
-Configure Firebase and obtain necessary API keys.
-Update the configuration file with your Firebase API keys.
-Start the development server: npm start
-Access the application through your web browser at http://localhost:3000.
+To run the project locally, follow these steps:
 
+
+
+
+                                                Clone the repository:
+                                                  ->git clone
+                                                       <https://github.com/ParthRatra/Sandese.git>
+                                                Navigate to the project directory:
+                                                ->cd project-directory
+                                                npm install
+                                                npm start
+  This will start the project locally and you can access it in your web browser by visiting http://localhost:3000
+  Note: Make sure you have Node.js and npm (Node Package Manager) installed on your machine before running these commands.
 
 
 
