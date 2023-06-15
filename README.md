@@ -41,7 +41,7 @@ DATABASE OF AUTHENTICATION
 
 ->Calendar for Scheduling Rides: The application includes a calendar feature that allows users to schedule rides according to their preferred date and time.
 
-Authentication of Drivers: The Restful API integration enables the validation of drivers' Aadhar card and Driving License details with an accuracy rate of 80-90%.
+->Authentication of Drivers: The Restful API integration enables the validation of drivers' Aadhar card and Driving License details with an accuracy rate of 80-90%.
 
 
 
